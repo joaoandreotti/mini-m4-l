@@ -19,7 +19,6 @@ ASFLAGS += -Wall
 ASFLAGS += -ffreestanding
 ASFLAGS += -fno-builtin
 ASFLAGS += -nostdlib
-ASFLAGS += -nostdinc++
 
 # Linker directives.
 LSCRIPT = ./$(LD_SCRIPT)
@@ -28,7 +27,6 @@ LFLAGS += -mthumb
 LFLAGS += -Wall
 LFLAGS += --specs=nosys.specs
 LFLAGS += -nostdlib
-LFLAGS += -nostdinc++
 LFLAGS += -lgcc
 LFLAGS += -ffreestanding
 LFLAGS += -fno-builtin
