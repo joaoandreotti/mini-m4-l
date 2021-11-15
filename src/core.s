@@ -11,4 +11,4 @@ interrupt_table:
 reset_handler:
   ldr  r0, =__stack
   mov  sp, r0
-  b reset_handler
+  b main
