@@ -2,13 +2,11 @@
 .cpu cortex-m4
 .thumb
 
-.type interrupt_table, %object
-interrupt_table:
-    .word __stack
-    .word reset_handler
+isr_vector:
+  .word 0x20002000
+  .word Reset_Handler
 
-.type reset_handler, %function
-reset_handler:
-  ldr  r0, =__stack
-  mov  sp, r0
-  b main
+Reset_Handler:
+  ldr   r0, =0x20002000
+  mov   sp, r0
+  bl main

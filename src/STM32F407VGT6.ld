@@ -1,4 +1,9 @@
-__stack = 0x20001000;
+ENTRY(Reset_Handler)
+
+
+/*
+_estack = 0x20002000;
+*/
 
 MEMORY
 {
@@ -8,19 +13,13 @@ MEMORY
 
 SECTIONS
 {
-  . = 0x08000000;
-
-  .interrupt_table :
-  {
-    *(.interrupt_table)
+  .text : {
+    *(.main)
   } > FLASH
 
-  .text :
-  {
-    *(.text)
-    *(.text.*)
-    *(.glue_7t)
-    *(.glue_7)
-    *(.gcc*)
+  .data : {
+  } > FLASH
+
+  .bss : {
   } > FLASH
 }

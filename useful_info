@@ -1,0 +1,25 @@
+RCC ADDRESSES:
+  -------------------UNRESOLVED--------------------
+  PERIPH_BASE           0x40000000U
+  AHB1PERIPH_BASE       (PERIPH_BASE + 0x00020000U)
+  RCC_BASE              (AHB1PERIPH_BASE + 0x3800U)
+  RCC                   ((RCC_TypeDef *) RCC_BASE)
+
+  -------------------RESOLVED----------------------
+  PERIPH_BASE           0x40000000U
+  AHB1PERIPH_BASE       (0x40000000U + 0x00020000U) => 0x40020000
+  RCC_BASE              (0x40020000U + 0x3800U) => 0x40023800
+  RCC                   ((RCC_TypeDef *) RCC_BASE)
+
+GPIO ADDRESSES:
+  -------------------UNRESOLVED--------------------
+  PERIPH_BASE           0x40000000U
+  AHB1PERIPH_BASE       (PERIPH_BASE + 0x00020000U)
+  GPIOD_BASE            (AHB1PERIPH_BASE + 0x0C00U)
+  GPIOD               ((GPIO_TypeDef *) GPIOD_BASE)
+
+  -------------------RESOLVED----------------------
+  PERIPH_BASE           0x40000000U
+  AHB1PERIPH_BASE       (0x40000000U + 0x00020000U) => 0x40020000
+  GPIOD_BASE            (AHB1PERIPH_BASE + 0x0C00U) => 0x40020C00
+  GPIOD               ((GPIO_TypeDef *) GPIOD_BASE)
